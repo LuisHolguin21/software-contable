@@ -1,0 +1,7 @@
+{
+  "name": "proyectoContable",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
