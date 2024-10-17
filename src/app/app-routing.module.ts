@@ -29,7 +29,8 @@ const routes: Routes = [
   {
     path: 'nuevoestudiante',
     loadChildren: () => import('./nuevoestudiante/nuevoestudiante.module').then( m => m.NuevoestudiantePageModule)
-  },  {
+  },
+  {
     path: 'balance',
     loadChildren: () => import('./balance/balance.module').then( m => m.BalancePageModule)
   }
