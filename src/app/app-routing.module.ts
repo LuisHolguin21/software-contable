@@ -6,30 +6,21 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
+  
   {
-    path: 'materias',
-    loadChildren: () => import('./materias/materias.module').then( m => m.MateriasPageModule)
+    path: 'trabajos',
+    loadChildren: () => import('./trabajos/trabajos.module').then( m => m.TrabajosPageModule)
   },
   {
-    path: 'estudiantes',
-    loadChildren: () => import('./estudiantes/estudiantes.module').then( m => m.EstudiantesPageModule)
+    path: 'empleados',
+    loadChildren: () => import('./empleados/empleados.module').then( m => m.EmpleadosPageModule)
   },
   {
-    path: 'editarmateria',
-    loadChildren: () => import('./editarmateria/editarmateria.module').then( m => m.EditarmateriaPageModule)
-  },
-  {
-    path: 'nuevamateria',
-    loadChildren: () => import('./nuevamateria/nuevamateria.module').then( m => m.NuevamateriaPageModule)
-  },
-  {
-    path: 'editarestudiante',
-    loadChildren: () => import('./editarestudiante/editarestudiante.module').then( m => m.EditarestudiantePageModule)
-  },
-  {
-    path: 'nuevoestudiante',
-    loadChildren: () => import('./nuevoestudiante/nuevoestudiante.module').then( m => m.NuevoestudiantePageModule)
+    path: 'nuevoempleado',
+    loadChildren: () => import('./nuevoempleado/nuevoempleado.module').then( m => m.NuevoempleadoPageModule)
   }
+
+
 ];
 @NgModule({
   imports: [

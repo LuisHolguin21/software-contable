@@ -20,29 +20,18 @@ const routes: Routes = [
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       {
-        path: 'Materias',
-        loadChildren: () => import('../materias/materias.module').then(m => m.MateriasPageModule)
+        path: 'Trabajos',
+        loadChildren: () => import('../trabajos/trabajos.module').then(m => m.TrabajosPageModule)
       },
       {
-        path: 'editarmateria/:id',
-        loadChildren: () => import('../editarmateria/editarmateria.module').then(m => m.EditarmateriaPageModule)
+        path: 'empleados/:id',
+        loadChildren: () => import('../empleados/empleados.module').then(m => m.EmpleadosPageModule)
       },
       {
-        path: 'nuevamateria',
-        loadChildren: () => import('../nuevamateria/nuevamateria.module').then(m => m.NuevamateriaPageModule)
+        path: 'empleados/:id/nuevoempleado',
+        loadChildren: () => import('../nuevoempleado/nuevoempleado.module').then(m => m.NuevoempleadoPageModule)
       },
-      {
-        path: 'estudiantes/:id',
-        loadChildren: () => import('../estudiantes/estudiantes.module').then(m => m.EstudiantesPageModule)
-      },
-      {
-        path: 'estudiantes/editarestudiante/:id',
-        loadChildren: () => import('../editarestudiante/editarestudiante.module').then(m => m.EditarestudiantePageModule)
-      },
-      {
-        path: 'estudiantes/:id/nuevoestudiante',
-        loadChildren: () => import('../nuevoestudiante/nuevoestudiante.module').then(m => m.NuevoestudiantePageModule)
-      },
+      
       {
         path: '',
         redirectTo: '/tabs/tab1',
