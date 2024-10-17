@@ -1,4 +1,3 @@
-
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
@@ -19,7 +18,8 @@ const routes: Routes = [
   {
     path: 'nuevoempleado',
     loadChildren: () => import('./nuevoempleado/nuevoempleado.module').then( m => m.NuevoempleadoPageModule)
-  },  {
+  },
+  {
     path: 'balance',
     loadChildren: () => import('./balance/balance.module').then( m => m.BalancePageModule)
   }
