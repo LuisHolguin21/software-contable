@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Nuevo estudiante</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form (ngSubmit)="guardar(nuevoEstudiante)" #nuevoForm="ngForm">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">ID:</ion-label>
+        <ion-input type="text" name="id" [(ngModel)]="nuevoEstudiante.id" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Nombre del Estudiante:</ion-label>
+        <ion-input type="text" name="nombre_estudiante" [(ngModel)]="nuevoEstudiante.nombre_estudiante" required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating">Faltas:</ion-label>
+        <ion-input type="text" name="faltas" [(ngModel)]="nuevoEstudiante.faltas" required></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Parcial 1:</ion-label>
+        <ion-input type="number" name="parcial_1" [(ngModel)]="nuevoEstudiante.parcial_1" (ngModelChange)="onParcialChange()" required max="5"></ion-input>
+      </ion-item>
+       <!-- Mensaje de error para Parcial 1 -->
+      <div *ngIf="nuevoForm.controls['parcial_1']?.errors?.['max'] && nuevoForm.controls['parcial_1']?.touched">
+        <p  style="color:red; margin-left: 15px;">La nota no puede ser mayor a 5.0.</p>
+      </div>
+
+      <ion-item>
+        <ion-label position="floating">Parcial 2:</ion-label>
+        <ion-input type="number" name="parcial_2" [(ngModel)]="nuevoEstudiante.parcial_2" (ngModelChange)="onParcialChange()"  required max="5"></ion-input>
+      </ion-item>
+      <!-- Mensaje de error para Parcial 1 -->
+      <div *ngIf="nuevoForm.controls['parcial_2']?.errors?.['max'] && nuevoForm.controls['parcial_2']?.touched">
+        <p  style="color:red; margin-left: 15px;">La nota no puede ser mayor a 5.0.</p>
+      </div>
+
+      <ion-item>
+        <ion-label position="floating">Parcial 3:</ion-label>
+        <ion-input type="number" name="parcial_3" [(ngModel)]="nuevoEstudiante.parcial_3" (ngModelChange)="onParcialChange()" required max="5"></ion-input>
+      </ion-item>
+      <!-- Mensaje de error para Parcial 1 -->
+      <div *ngIf="nuevoForm.controls['parcial_3']?.errors?.['max'] && nuevoForm.controls['parcial_3']?.touched">
+        <p  style="color:red; margin-left: 15px;">La nota no puede ser mayor a 5.0.</p>
+      </div>
+
+      <ion-item>
+        <ion-label position="floating">Definitiva:</ion-label>
+        <span style="margin-left: 77px;" class="definitiva-value">{{ nuevoEstudiante.definitiva | number:'1.0-2' }}</span>
+      </ion-item>
+
+    </ion-list>
+    
+    <ion-button color="primary" type="submit" [disabled]="!this.nuevoForm.form.valid">
+      Guardar
+    </ion-button>
+  </form>
+</ion-content>
+
+
