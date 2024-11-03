@@ -40,6 +40,22 @@ const routes: Routes = [
         loadChildren: () => import('../configuracion/configuracion.module').then(m => m.ConfiguracionPageModule)
       },
       {
+        path: 'trabajadores',
+        loadChildren: () => import('../trabajadores/trabajadores.module').then(m => m.TrabajadoresPageModule)
+      },
+      {
+        path: 'tipo-gastos',
+        loadChildren: () => import('../tipo-gastos/tipo-gastos.module').then(m => m.TipoGastosPageModule)
+      },
+      {
+        path: 'tipo-trabajos',
+        loadChildren: () => import('../tipo-trabajos/tipo-trabajos.module').then(m => m.TipoTrabajosPageModule)
+      },
+      {
+        path: 'variedad-coffe',
+        loadChildren: () => import('../variedad-coffe/variedad-coffe.module').then(m => m.VariedadCoffePageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
