@@ -20,7 +20,7 @@ const routes: Routes = [
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
       },
       {
-        path: 'Trabajos',
+        path: 'trabajos',
         loadChildren: () => import('../trabajos/trabajos.module').then(m => m.TrabajosPageModule)
       },
       {
@@ -35,7 +35,10 @@ const routes: Routes = [
         path: 'balance',
         loadChildren: () => import('../balance/balance.module').then(m => m.BalancePageModule)
       },
-      
+      {
+        path: 'configuracion',
+        loadChildren: () => import('../configuracion/configuracion.module').then(m => m.ConfiguracionPageModule)
+      },
       {
         path: '',
         redirectTo: '/tabs/tab1',
