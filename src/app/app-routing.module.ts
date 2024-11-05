@@ -31,6 +31,13 @@ const routes: Routes = [
   {
     path: 'trabajadores',
     loadChildren: () => import('./trabajadores/trabajadores.module').then( m => m.TrabajadoresPageModule)
+<<<<<<< HEAD
+=======
+  },
+  {
+    path: 'tipo-gastos',
+    loadChildren: () => import('./tipo-gastos/tipo-gastos.module').then( m => m.TipoGastosPageModule)
+>>>>>>> master
   },
   {
     path: 'variedad-coffe',
@@ -41,9 +48,17 @@ const routes: Routes = [
     loadChildren: () => import('./tipo-trabajos/tipo-trabajos.module').then( m => m.TipoTrabajosPageModule)
   },
   {
+<<<<<<< HEAD
     path: 'tipo-gasto',
     loadChildren: () => import('./tipo-gasto/tipo-gasto.module').then( m => m.TipoGastoPageModule)
   }
+=======
+    path: 'nueva-variedad',
+    loadChildren: () => import('./nueva-variedad/nueva-variedad.module').then( m => m.NuevaVariedadPageModule)
+  },
+
+
+>>>>>>> master
 ];
 @NgModule({
   imports: [
@@ -53,5 +68,8 @@ const routes: Routes = [
 })
 export class AppRoutingModule {}
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 
