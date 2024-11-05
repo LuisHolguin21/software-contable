@@ -12,24 +12,11 @@ import { environment } from '../environments/environment';
 import {AngularFireModule} from '@angular/fire/compat';
 import {AngularFirestoreModule,} from '@angular/fire/compat/firestore';
 
-<<<<<<< HEAD
-
-
-@NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(),
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule,
-
-
-=======
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), 
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-
->>>>>>> master
     AppRoutingModule],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
