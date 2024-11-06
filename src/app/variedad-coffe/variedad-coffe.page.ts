@@ -46,7 +46,7 @@ export class VariedadCoffePage implements OnInit {
     header:"Que es lo que desea hacer?",
     buttons:[
       {
-        text:"Borrar contacto",
+        text:"Borrar Variedad",
         role:"destructive",
         cssClass: 'action-sheet-delete',
         handler:() =>{
@@ -83,7 +83,7 @@ export class VariedadCoffePage implements OnInit {
         handler:() =>{
           this.variedadCafeService.borrarVariedad(variedad);
           this.getVariedades();
-          this.mostrarMensaje("Contacto eliminado!");
+          this.mostrarMensaje("Variedad eliminada!");
 
         }
       },

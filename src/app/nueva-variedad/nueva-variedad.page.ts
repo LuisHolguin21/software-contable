@@ -30,7 +30,7 @@ export class NuevaVariedadPage implements OnInit {
     this.mostrarMensaje('Guardando..');
     this.variedadCafeService.crearNueva(this.nuevaVariedad).then(()=>{
       this.router.navigateByUrl('variedad-coffe');
-      this.mostrarMensaje('Contacto registrado con exito!');
+      this.mostrarMensaje('Variedad registrada con exito!');
     }, err =>{
       this.mostrarMensaje('hubo un error');
     }

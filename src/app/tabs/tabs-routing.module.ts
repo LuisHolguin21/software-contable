@@ -52,6 +52,18 @@ const routes: Routes = [
         loadChildren: () => import('../variedad-coffe/variedad-coffe.module').then(m => m.VariedadCoffePageModule)
       },
       {
+        path: 'tipo-gasto',
+        loadChildren: () => import('../tipo-gasto/tipo-gasto.module').then(m => m.TipoGastoPageModule)
+      },
+      {
+        path: 'nueva-variedad',
+        loadChildren: () => import('../nueva-variedad/nueva-variedad.module').then(m => m.NuevaVariedadPageModule)
+      },
+      {
+        path: 'editarvariedad-cafe/:id',
+        loadChildren: () => import('../editarvariedad-cafe/editarvariedad-cafe.module').then(m => m.EditarvariedadCafePageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
