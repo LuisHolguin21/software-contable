@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Registrar variedad de cafe</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form (ngSubmit)="nueva(nuevaVariedad)" #nuevoForm="ngForm">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Id</ion-label>
+        <ion-input type = "text" name="id"[(ngModel)]="nuevaVariedad.id" requered></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Nombre de la vaierdad</ion-label>
+        <ion-input type = "text" name="nombre"[(ngModel)]="nuevaVariedad.nombre" requered></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Descripcion</ion-label>
+        <ion-input type = "text" name="descripcion"[(ngModel)]="nuevaVariedad.descripcion" requered></ion-input>
+      </ion-item>
+
+    </ion-list>
+    <div padding>
+      <ion-button color="primary" expand="block" type="submit" [disabled]="!nuevoForm.form.valid">Guardar</ion-button>
+    </div>
+   </form>
+</ion-content>
