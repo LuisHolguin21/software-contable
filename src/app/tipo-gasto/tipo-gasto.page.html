@@ -5,39 +5,23 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Registro de Gastos</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <form (ngSubmit)="nuevo(nuevogasto)" #nuevoForm="ngForm">
-    <ion-list>
-      <ion-item>
-        <ion-label position="floating">Fertilizantes</ion-label>
-        <ion-input type="number" name="fertilizantes" [(ngModel)]="nuevogasto.fertilizantes" required></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Gastos Administrativos</ion-label>
-        <ion-input type="number" name="gastoAdministrativo" [(ngModel)]="nuevogasto.GastoAdministrativo" required></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Transporte</ion-label>
-        <ion-input type="number" name="transporte" [(ngModel)]="nuevogasto.transporte" required></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Maquinaria y Equipo</ion-label>
-        <ion-input type="number" name="maquinariayequipo" [(ngModel)]="nuevogasto.maquinariayequipo" required></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label position="floating">Marketing y Ventas</ion-label>
-        <ion-input type="number" name="marquetinyventas" [(ngModel)]="nuevogasto.marquetinyventas" required></ion-input>
-      </ion-item>
-    </ion-list>
-    
-    <div padding>
-      <ion-button color="primary" expand="block" type="submit" [disabled]="!nuevoForm.form.valid">Crear gasto</ion-button>
-    </div>
-  </form>
+   
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/tabs/nuevo-tipo-gasto" routerDirection="forward">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-list color="">
+    <ion-item color ="" *ngFor="let gastosItem of Gastos$" (click)="selectGasto(gastosItem.id)">
+      <ion-label>
+        <!-- <h2>Id:</h2> <p>{{variedadesItem.id}}</p> -->
+        <h2>descripcion:</h2> <p>{{gastosItem.descripcion}}</p>
+        <h2>valor:</h2> <p>{{gastosItem.valor}}</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
 
 </ion-content>

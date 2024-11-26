@@ -53,6 +53,14 @@ const routes: Routes = [
         loadChildren: () => import('../tipo-gasto/tipo-gasto.module').then(m => m.TipoGastoPageModule)
       },
       {
+        path: 'nuevo-tipo-gasto',
+        loadChildren: () => import('../nuevo-tipo-gasto/nuevo-tipo-gasto.module').then(m => m.NuevoTipoGastoPageModule)
+      },
+      {
+        path: 'editar-tipogasto/:id',
+        loadChildren: () => import('../editar-tipogasto/editar-tipogasto.module').then(m => m.EditarTipogastoPageModule)
+      },
+      {
         path: 'nueva-variedad',
         loadChildren: () => import('../nueva-variedad/nueva-variedad.module').then(m => m.NuevaVariedadPageModule)
       },

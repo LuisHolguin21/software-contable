@@ -4,6 +4,7 @@ import { gastosService } from '../services/gastos.service'; // Asegúrate de usa
 import { ToastController, NavController, LoadingController,ActionSheetController, AlertController
 } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable,map } from 'rxjs';
 
 @Component({
   selector: 'app-gastos',
@@ -12,14 +13,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class TipoGastoPage implements OnInit {
 
-  gastos$!: gastos[];
-  nuevogasto = {
-    fertilizantes: null,
-    GastoAdministrativo: null,
-    transporte: null,
-    maquinariayequipo: null,
-    marquetinyventas: null
-  };
+  Gastos$!: gastos[];
 
   constructor(
     private gastosService: gastosService,
@@ -33,85 +27,84 @@ export class TipoGastoPage implements OnInit {
   ) { }
    
   ngOnInit() {
-    // Puedes llamar a getGastos aquí si deseas cargar los gastos al iniciar
-    this.getGastos();
+   
   }
 
-  async getGastos(): Promise<void> {
-    (await this.gastosService.getGatso()).subscribe((gastos) => {
-      console.log(gastos); // Muestra los gastos obtenidos
-      this.gastos$ = gastos; // Asigna los gastos obtenidos a this.gastos$
-    });
-  }
+async getTipogasto():Promise<void>{
+   (await this.gastosService.getTipogasto()).subscribe((Gastos)=> {
+      console.log(Gastos);
+      this.Gastos$ = Gastos;
+  });
+}
 
-  ionViewDidEnter() {
-    this.getGastos();
-  }
 
-  async selectGastos(gastos: any) {
-    let actionSheet = await this.actionSheetCtrl.create({
-      header: "¿Qué es lo que desea hacer?",
-      buttons: [
-        {
-          text: "Borrar contacto",
-          role: "destructive",
-          handler: () => {
-            this.borrar(gastos);
-          }
-        },
-        {
-          text: "Modificar contacto",
-          handler: () => {
-            this.editar(gastos);
-          }
-        },
-        {
-          text: "Cancelar",
-          role: "cancel",
-          handler: () => {
-            console.log('Cancelado');
-          }
+
+ ionViewDidEnter(){
+  this.getTipogasto();
+ }
+
+ async selectGasto(gastos: any){
+  let actionSheet = await this.actionSheetCtrl.create({
+    header:"Que es lo que desea hacer?",
+    buttons:[
+      {
+        text:"Borrar gasto",
+        role:"destructive",
+        cssClass: 'action-sheet-delete',
+        handler:() =>{
+          this.borrar(gastos);
         }
-      ]
-    });
-    await actionSheet.present();
-  }
-
-  async borrar(gastos: any) {
-    const alert = await this.alertCtrl.create({
-      header: "Eliminar!",
-      message: "¿Seguro desea eliminar el contacto?",
-      buttons: [
-        {
-          text: "Sí",
-          handler: async () => {
-            await this.gastosService.borrarGastos(gastos); // Asegúrate de que esto sea asíncrono
-            await this.getGastos(); // Espera a que se obtengan los gastos nuevamente
-            this.mostrarMensaje("Contacto eliminado!");
-          }
-        },
-        {
-          text: "No",
-          role: "cancel",
-          cssClass: "secondary"
+      },  
+      {
+        text:"Modificar gasto",
+        handler:()=>{
+          this.editar(gastos);
         }
-      ]
-    });
-    await alert.present();
-  }
+      },
+      {
+        text: "Cancelar",
+        role: "cancel",
+        cssClass: 'action-sheet-cancel',
+        handler:()=>{
+          console.log('Cancelado')
+        } 
+      }
+    ]
 
-  mostrarMensaje(mensaje: string) {
-    this.toastCtrl.create({
-      message: mensaje, // Incluye el mensaje aquí
-      duration: 2000
-    }).then(toast => toast.present());
-  }
+  });
+  await actionSheet.present();
+ }
 
-  async editar(contacto: any) {
-    this.router.navigate(["tabs/editarcontacto", contacto]);
-  }
-  nuevo(gasto: any) {
-    console.log('Nuevo gasto:', gasto);
-    // Aquí puedes agregar la lógica para guardar el nuevo gasto
-  }
+ async borrar(gastos:any){
+  const alert = await this.alertCtrl.create({
+    header:"Eliminar!",
+    message:"Seguro desea elimar la gasto ?",
+    buttons:[
+      {
+        text: "si",
+        handler:() =>{
+          this.gastosService.borrarGastos(gastos);
+          this.getTipogasto();
+          this.mostrarMensaje("gosto eliminada!");
+
+        }
+      },
+      {
+        text:"No",
+        role:"cancel",
+        cssClass: "secondary"
+      }
+    ]
+  });
+  await alert.present();
+}
+mostrarMensaje (mensaje: string){
+  this.toastCtrl.create({
+    duration:2000
+  }).then(toast => toast.present());
+}
+async editar(gastos: any){
+  this.router.navigate(["tabs/editar-tipogasto",gastos]);
+}
+
 }

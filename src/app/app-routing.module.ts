@@ -35,14 +35,17 @@ const routes: Routes = [
     path: 'tipo-trabajos',
     loadChildren: () => import('./tipo-trabajos/tipo-trabajos.module').then( m => m.TipoTrabajosPageModule)
   },
-
   {
     path: 'tipo-gasto',
     loadChildren: () => import('./tipo-gasto/tipo-gasto.module').then( m => m.TipoGastoPageModule)
   },
   {
-    path: 'tipo-gasto',
-    loadChildren: () => import('./tipo-gasto/tipo-gasto.module').then( m => m.TipoGastoPageModule)
+    path: 'nuevo-tipo-gasto',
+    loadChildren: () => import('./nuevo-tipo-gasto/nuevo-tipo-gasto.module').then( m => m.NuevoTipoGastoPageModule)
+  },
+  {
+    path: 'editar-tipogasto',
+    loadChildren: () => import('./editar-tipogasto/editar-tipogasto.module').then( m => m.EditarTipogastoPageModule)
   },
   {
     path: 'nueva-variedad',
