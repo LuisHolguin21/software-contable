@@ -27,6 +27,7 @@ const routes: Routes = [
         path: 'empleados/:id/nuevoempleado',
         loadChildren: () => import('../nuevoempleado/nuevoempleado.module').then(m => m.NuevoempleadoPageModule)
       },
+
       {
         path: 'balance',
         loadChildren: () => import('../balance/balance.module').then(m => m.BalancePageModule)
@@ -42,6 +43,15 @@ const routes: Routes = [
       {
         path: 'tipo-trabajos',
         loadChildren: () => import('../tipo-trabajos/tipo-trabajos.module').then(m => m.TipoTrabajosPageModule)
+      },
+      {
+
+        path: 'nuevo-tipo-trabajo',
+        loadChildren: () => import('../nuevo-tipo-trabajo/nuevo-tipo-trabajo-routing.module').then(m => m.NuevoTipoTrabajoPageRoutingModule)
+      },
+      {
+        path: 'editar-tipo-trabajo/:id',
+        loadChildren: () => import('../editar-tipo-trabajo/editar-tipo-trabajo-routing.module').then(m => m.EditarTipoTrabajoPageRoutingModule)
       },
       {
         path: 'variedad-coffe',

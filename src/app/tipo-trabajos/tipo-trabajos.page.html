@@ -5,9 +5,19 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">tipoTrabajos</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/tabs/nuevo-tipo-trabajo" routerDirection="forward">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-list color="">
+    <ion-item color ="" *ngFor="let tipoTrabajosItem of tipotrabajos$" (click)="selectTipoTrabajo(tipoTrabajosItem.id)">
+      <ion-label>
+        <h2>Nombre:</h2> <p>{{tipoTrabajosItem.nombre}}</p>
+        <!-- <h2>Descripcion:</h2> <p>{{variedadesItem.descripcion}}</p> -->
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
 </ion-content>
