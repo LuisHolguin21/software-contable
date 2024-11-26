@@ -19,18 +19,7 @@ const routes: Routes = [
         path: 'tab3',
         loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
       },
-      {
-        path: 'trabajos',
-        loadChildren: () => import('../trabajos/trabajos.module').then(m => m.TrabajosPageModule)
-      },
-      {
-        path: 'empleados/:id',
-        loadChildren: () => import('../empleados/empleados.module').then(m => m.EmpleadosPageModule)
-      },
-      {
-        path: 'empleados/:id/nuevoempleado',
-        loadChildren: () => import('../nuevoempleado/nuevoempleado.module').then(m => m.NuevoempleadoPageModule)
-      },
+      
       {
         path: 'balance',
         loadChildren: () => import('../balance/balance.module').then(m => m.BalancePageModule)
@@ -44,16 +33,24 @@ const routes: Routes = [
         loadChildren: () => import('../trabajadores/trabajadores.module').then(m => m.TrabajadoresPageModule)
       },
       {
-        path: 'tipo-gastos',
-        loadChildren: () => import('../tipo-gastos/tipo-gastos.module').then(m => m.TipoGastosPageModule)
-      },
-      {
         path: 'tipo-trabajos',
         loadChildren: () => import('../tipo-trabajos/tipo-trabajos.module').then(m => m.TipoTrabajosPageModule)
       },
       {
+        path: 'nuevo-tipo-trabajo',
+        loadChildren: () => import('../nuevo-tipo-trabajo/nuevo-tipo-trabajo-routing.module').then(m => m.NuevoTipoTrabajoPageRoutingModule)
+      },
+      {
+        path: 'editar-tipo-trabajo/:id',
+        loadChildren: () => import('../editar-tipo-trabajo/editar-tipo-trabajo-routing.module').then(m => m.EditarTipoTrabajoPageRoutingModule)
+      },
+      {
         path: 'variedad-coffe',
         loadChildren: () => import('../variedad-coffe/variedad-coffe.module').then(m => m.VariedadCoffePageModule)
+      },
+      {
+        path: 'tipo-gasto',
+        loadChildren: () => import('../tipo-gasto/tipo-gasto.module').then(m => m.TipoGastoPageModule)
       },
       {
         path: 'nueva-variedad',

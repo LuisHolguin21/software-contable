@@ -1,4 +1,4 @@
 export interface Trabajos{
-    id:number,
+    id:string,
     nombre:string,
   }
