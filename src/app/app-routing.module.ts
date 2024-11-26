@@ -8,18 +8,6 @@ const routes: Routes = [
   },
   
   {
-    path: 'trabajos',
-    loadChildren: () => import('./trabajos/trabajos.module').then( m => m.TrabajosPageModule)
-  },
-  {
-    path: 'empleados',
-    loadChildren: () => import('./empleados/empleados.module').then( m => m.EmpleadosPageModule)
-  },
-  {
-    path: 'nuevoempleado',
-    loadChildren: () => import('./nuevoempleado/nuevoempleado.module').then( m => m.NuevoempleadoPageModule)
-  },
-  {
 
     path: 'balance',
     loadChildren: () => import('./balance/balance.module').then( m => m.BalancePageModule)
@@ -33,28 +21,33 @@ const routes: Routes = [
     loadChildren: () => import('./trabajadores/trabajadores.module').then( m => m.TrabajadoresPageModule)
   },
   {
-    path: 'tipo-gastos',
-    loadChildren: () => import('./tipo-gastos/tipo-gastos.module').then( m => m.TipoGastosPageModule)
-  },
-  {
     path: 'variedad-coffe',
     loadChildren: () => import('./variedad-coffe/variedad-coffe.module').then( m => m.VariedadCoffePageModule)
   },
   {
     path: 'tipo-trabajos',
     loadChildren: () => import('./tipo-trabajos/tipo-trabajos.module').then( m => m.TipoTrabajosPageModule)
-  },  {
+  },
+  {
+    path: 'tipo-gasto',
+    loadChildren: () => import('./tipo-gasto/tipo-gasto.module').then( m => m.TipoGastoPageModule)
+  },
+  {
     path: 'nueva-variedad',
     loadChildren: () => import('./nueva-variedad/nueva-variedad.module').then( m => m.NuevaVariedadPageModule)
   },
   {
     path: 'editarvariedad-cafe',
     loadChildren: () => import('./editarvariedad-cafe/editarvariedad-cafe.module').then( m => m.EditarvariedadCafePageModule)
+  },
+  {
+    path: 'nuevo-tipo-trabajo',
+    loadChildren: () => import('./nuevo-tipo-trabajo/nuevo-tipo-trabajo.module').then( m => m.NuevoTipoTrabajoPageModule)
+  },
+  {
+    path: 'editar-tipo-trabajo',
+    loadChildren: () => import('./editar-tipo-trabajo/editar-tipo-trabajo.module').then( m => m.EditarTipoTrabajoPageModule)
   }
-
-
-
-
 
 ];
 @NgModule({
@@ -64,6 +57,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
-
-
 

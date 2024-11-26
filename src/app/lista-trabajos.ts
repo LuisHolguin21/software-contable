@@ -1,8 +1,8 @@
-import {Trabajos} from './trabajos';
+// import {Trabajos} from './trabajos';
 
-export const TRABAJOS : Trabajos[]=[
-    {id:1, nombre:"Recoleccion de cafe",},
-    {id:2, nombre:"Trabajos al dia"},
-    {id:3, nombre:"Trabajos al contrato"},
-    {id:4, nombre:"Otros"}
-]
+// export const TRABAJOS : Trabajos[]=[
+//     {id:1, nombre:"Recoleccion de cafe",},
+//     {id:2, nombre:"Trabajos al dia"},
+//     {id:3, nombre:"Trabajos al contrato"},
+//     {id:4, nombre:"Otros"}
+// ]

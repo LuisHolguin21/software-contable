@@ -1,36 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastController, NavController, LoadingController } from '@ionic/angular';
 import { ActivatedRoute, Router, ParamMap, Params } from '@angular/router';
-import { VariedadesCafe } from '../variedades-cafe'; 
-
-import { VariedadCafeService } from '../services/variedad-cafe.service';  
+import { Trabajos } from '../trabajos';
+import { TipoTrabajoService } from '../services/tipotrabajos.service';
 
 @Component({
-  selector: 'app-nueva-variedad',
-  templateUrl: './nueva-variedad.page.html',
-  styleUrls: ['./nueva-variedad.page.scss'],
+  selector: 'app-nuevo-tipo-trabajo',
+  templateUrl: './nuevo-tipo-trabajo.page.html',
+  styleUrls: ['./nuevo-tipo-trabajo.page.scss'],
 })
-export class NuevaVariedadPage implements OnInit {
+export class NuevoTipoTrabajoPage implements OnInit {
 
-  nuevaVariedad={} as VariedadesCafe;
+  nuevoTipoTrabajo={} as Trabajos;
 
   constructor(
     private Router: ActivatedRoute,  
     private navCtrl: NavController,
     private loadingControer: LoadingController,
-    private variedadCafeService: VariedadCafeService,
+    private tipoTrabajoService: TipoTrabajoService,
     private router: Router,
-    private toastCtrl: ToastController,
-  ) { }
+    private toastCtrl: ToastController,) { }
 
   ngOnInit() {
   }
 
-  nueva(nuevaVariedad: any){
+  nueva(nuevoTipoTrabajo: any){
     this.mostrarMensaje('Guardando..');
-    this.variedadCafeService.crearNueva(this.nuevaVariedad).then(()=>{
-      this.router.navigateByUrl('variedad-coffe');
-      this.mostrarMensaje('Variedad registrada con exito!');
+    this.tipoTrabajoService.crearNuevo(this.nuevoTipoTrabajo).then(()=>{
+      this.router.navigateByUrl('tipo-trabajos');
+      this.mostrarMensaje('Tipo de trabajo registrado con exito!');
     }, err =>{
       this.mostrarMensaje('hubo un error');
     }
