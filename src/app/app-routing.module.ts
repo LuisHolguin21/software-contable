@@ -7,10 +7,10 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   
-  {
-    path: 'trabajos',
-    loadChildren: () => import('./trabajos/trabajos.module').then( m => m.TrabajosPageModule)
-  },
+  // {
+  //   path: 'trabajos',
+  //   loadChildren: () => import('./trabajos/trabajos.module').then( m => m.TrabajosPageModule)
+  // },
   {
     path: 'empleados',
     loadChildren: () => import('./empleados/empleados.module').then( m => m.EmpleadosPageModule)
