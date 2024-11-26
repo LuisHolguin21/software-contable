@@ -46,12 +46,17 @@ const routes: Routes = [
     loadChildren: () => import('./tipo-gasto/tipo-gasto.module').then( m => m.TipoGastoPageModule)
   },
   {
+    path: 'tipo-gasto',
+    loadChildren: () => import('./tipo-gasto/tipo-gasto.module').then( m => m.TipoGastoPageModule)
+  },
+  {
     path: 'nueva-variedad',
     loadChildren: () => import('./nueva-variedad/nueva-variedad.module').then( m => m.NuevaVariedadPageModule)
   },
   {
     path: 'editarvariedad-cafe',
     loadChildren: () => import('./editarvariedad-cafe/editarvariedad-cafe.module').then( m => m.EditarvariedadCafePageModule)
+
   },
   {
     path: 'nuevo-tipo-trabajo',
@@ -60,6 +65,7 @@ const routes: Routes = [
   {
     path: 'editar-tipo-trabajo',
     loadChildren: () => import('./editar-tipo-trabajo/editar-tipo-trabajo.module').then( m => m.EditarTipoTrabajoPageModule)
+
   }
 
 ];
@@ -70,5 +76,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
-
 
