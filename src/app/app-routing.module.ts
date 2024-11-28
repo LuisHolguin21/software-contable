@@ -64,7 +64,11 @@ const routes: Routes = [
     path: 'editar-tipo-trabajo',
     loadChildren: () => import('./editar-tipo-trabajo/editar-tipo-trabajo.module').then( m => m.EditarTipoTrabajoPageModule)
 
+  },  {
+    path: 'ingresos',
+    loadChildren: () => import('./ingresos/ingresos.module').then( m => m.IngresosPageModule)
   }
+
 
 ];
 @NgModule({

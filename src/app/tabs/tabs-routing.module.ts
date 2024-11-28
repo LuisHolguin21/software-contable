@@ -69,6 +69,10 @@ const routes: Routes = [
         loadChildren: () => import('../editarvariedad-cafe/editarvariedad-cafe.module').then(m => m.EditarvariedadCafePageModule)
       },
       {
+        path: 'ingresos',
+        loadChildren: () => import('../ingresos/ingresos.module').then(m => m.IngresosPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
