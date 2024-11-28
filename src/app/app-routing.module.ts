@@ -27,6 +27,7 @@ const routes: Routes = [
     loadChildren: () => import('./trabajadores/trabajadores.module').then( m => m.TrabajadoresPageModule)
   },
   {
+
     path: 'variedad-coffe',
     loadChildren: () => import('./variedad-coffe/variedad-coffe.module').then( m => m.VariedadCoffePageModule)
   },
@@ -39,7 +40,6 @@ const routes: Routes = [
     loadChildren: () => import('./tipo-gasto/tipo-gasto.module').then( m => m.TipoGastoPageModule)
   },
   {
-
     path: 'nuevo-tipo-gasto',
     loadChildren: () => import('./nuevo-tipo-gasto/nuevo-tipo-gasto.module').then( m => m.NuevoTipoGastoPageModule)
   },
@@ -64,7 +64,12 @@ const routes: Routes = [
     path: 'editar-tipo-trabajo',
     loadChildren: () => import('./editar-tipo-trabajo/editar-tipo-trabajo.module').then( m => m.EditarTipoTrabajoPageModule)
 
+  },
+  {
+    path: 'ingresos',
+    loadChildren: () => import('./ingresos/ingresos.module').then( m => m.IngresosPageModule)
   }
+
 
 ];
 @NgModule({

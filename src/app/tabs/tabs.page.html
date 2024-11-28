@@ -1,14 +1,24 @@
 <ion-tabs>
 
-  <ion-tab-bar style="height: 100px;" slot="bottom">
+  <ion-tab-bar style="height: 100px; " slot="bottom">
+
+    <ion-tab-button style="font-size: 20px;" tab="ingresos" href="/ingresos">
+      <img width="50" height="50" src="https://img.icons8.com/ios/50/request-money.png" alt="request-money"/>
+      <ion-label>Ingresos</ion-label>
+  </ion-tab-button>
+
+    <ion-tab-button style="font-size: 20px;" tab="gastos" href="/balance/balance">
+      <img width="50" height="50" src="https://img.icons8.com/ios/50/split-money.png" alt="split-money"/>
+      <ion-label>Gastos</ion-label>
+    </ion-tab-button>
 
     <ion-tab-button style="font-size: 20px;" tab="trabajos" href="/trabajos/trabajos">
-      <ion-icon style="font-size: 50px;" aria-hidden="true" name="people-outline"></ion-icon>
+      <img width="60" height="50" src="https://img.icons8.com/quill/50/work.png" alt="work"/>
       <ion-label>Tabajos</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button style="font-size: 20px;" tab="balance" href="/balance/balance">
-      <ion-icon style="font-size: 50px;" aria-hidden="true" name="cash-outline"></ion-icon>
+    <ion-tab-button style="font-size: 20px;" tab="balance" href="/balance">
+      <img width="50" height="50" src="https://img.icons8.com/ios/50/sales-performance-balance.png" alt="sales-performance-balance"/>
       <ion-label>Balance</ion-label>
     </ion-tab-button>
 

@@ -1,0 +1,76 @@
+<ion-content>
+  <form [formGroup]="ingresoForm" (ngSubmit)="guardarIngreso()">
+    <ion-item>
+      <ion-label position="floating">Fecha</ion-label>
+      <ion-datetime formControlName="fecha"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Cantidad</ion-label>
+      <ion-input type="number" formControlName="cantidad"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Variedad</ion-label>
+      <ion-select formControlName="variedad">
+        <ion-select-option 
+          *ngFor="let variedad of variedades" 
+          [value]="variedad.nombre">
+          {{variedad.nombre}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Cliente</ion-label>
+      <ion-input formControlName="cliente"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Finca</ion-label>
+      <ion-input formControlName="finca"></ion-input>
+    </ion-item>
+
+    <ion-button 
+      type="submit" 
+      expand="block" 
+      [disabled]="!ingresoForm.valid">
+      Guardar Ingreso
+    </ion-button>
+  </form>
+
+
+  <!-- Lista de Ingresos -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ingresos Registrados</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list *ngIf="ingresos.length > 0; else noIngresos">
+        <ion-item-sliding *ngFor="let ingreso of ingresos">
+          <ion-item>
+            <ion-label>
+              <h2>{{ ingreso.cliente }}</h2>
+              <p>Variedad: {{ ingreso.variedad }} | Fecha: {{ ingreso.fecha }}</p>
+              <p>Cantidad: ${{ ingreso.cantidad }}</p>
+              <p>Finca: {{ ingreso.finca }}</p>
+            </ion-label>
+          </ion-item>
+          <ion-item-options side="end">
+            <ion-item-option color="danger" (click)="eliminarIngreso(ingreso.id)">
+              <ion-icon name="trash"></ion-icon>
+              Eliminar
+            </ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+
+      <ng-template #noIngresos>
+        <ion-text color="medium">
+          <p>No hay ingresos registrados</p>
+        </ion-text>
+      </ng-template>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
