@@ -82,6 +82,10 @@ const routes: Routes = [
         loadChildren: () => import('../ingresos/ingresos.module').then(m => m.IngresosPageModule)
       },
       {
+        path: 'gastos',
+        loadChildren: () => import('../gastos/gastos.module').then(m => m.GastosPageModule)
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
