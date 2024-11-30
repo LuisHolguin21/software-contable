@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>jornaleros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button routerLink="/tabs/nuevojornalero" routerDirection="forward">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-list color="">
+    <ion-item color ="" *ngFor="let jornalerosItem of jornaleros$" (click)="selectJornalero(jornalerosItem.id)">
+      <ion-label>
+        <!-- <h2>Id:</h2> <p>{{variedadesItem.id}}</p> -->
+        <h2>Nombre:</h2> <p>{{jornalerosItem.nombre}}</p>
+        <h2>Celular:</h2> <p>{{jornalerosItem.celular}}</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

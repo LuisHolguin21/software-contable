@@ -58,6 +58,10 @@ const routes: Routes = [
         loadChildren: () => import('../variedad-coffe/variedad-coffe.module').then(m => m.VariedadCoffePageModule)
       },
       {
+        path: 'jornaleros',
+        loadChildren: () => import('../jornaleros/jornaleros.module').then(m => m.JornalerosPageModule)
+      },
+      {
         path: 'tipo-gasto',
         loadChildren: () => import('../tipo-gasto/tipo-gasto.module').then(m => m.TipoGastoPageModule)
       },
@@ -74,16 +78,29 @@ const routes: Routes = [
         loadChildren: () => import('../nueva-variedad/nueva-variedad.module').then(m => m.NuevaVariedadPageModule)
       },
       {
+        path: 'nuevojornalero',
+        loadChildren: () => import('../nuevojornalero/nuevojornalero.module').then(m => m.NuevojornaleroPageModule)
+      },
+      {
         path: 'editarvariedad-cafe/:id',
         loadChildren: () => import('../editarvariedad-cafe/editarvariedad-cafe.module').then(m => m.EditarvariedadCafePageModule)
+      },
+      {
+        path: 'editarjornalero/:id',
+        loadChildren: () => import('../editarjornalero/editarjornalero.module').then(m => m.EditarjornaleroPageModule)
       },
       {
         path: 'ingresos',
         loadChildren: () => import('../ingresos/ingresos.module').then(m => m.IngresosPageModule)
       },
       {
+<<<<<<< HEAD
         path: 'gastos',
         loadChildren: () => import('../gastos/gastos.module').then(m => m.GastosPageModule)
+=======
+        path: 'trabajoganado',
+        loadChildren: () => import('../trabajoganado/trabajoganado.module').then(m => m.TrabajoganadoPageModule)
+>>>>>>> doc-2
       },
       {
         path: '',

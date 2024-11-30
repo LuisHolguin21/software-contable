@@ -68,9 +68,28 @@ const routes: Routes = [
   {
     path: 'ingresos',
     loadChildren: () => import('./ingresos/ingresos.module').then( m => m.IngresosPageModule)
-  },  {
+  },
+  {
+
     path: 'gastos',
     loadChildren: () => import('./gastos/gastos.module').then( m => m.GastosPageModule)
+  },
+  {
+    path: 'jornaleros',
+    loadChildren: () => import('./jornaleros/jornaleros.module').then( m => m.JornalerosPageModule)
+  },
+  {
+    path: 'editarjornalero',
+    loadChildren: () => import('./editarjornalero/editarjornalero.module').then( m => m.EditarjornaleroPageModule)
+  },
+  {
+    path: 'nuevojornalero',
+    loadChildren: () => import('./nuevojornalero/nuevojornalero.module').then( m => m.NuevojornaleroPageModule)
+  },
+  {
+    path: 'trabajoganado',
+    loadChildren: () => import('./trabajoganado/trabajoganado.module').then( m => m.TrabajoganadoPageModule)
+
   }
 
 

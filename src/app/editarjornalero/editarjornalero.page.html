@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Edita tu trabajador</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form (ngSubmit)="editar()" #editarForm="ngForm" *ngIf = "seleccionado">
+   <ion-list>
+     <ion-item>
+       <ion-label position="floating">Nombre</ion-label>
+       <ion-input type = "text" name="nombre"[(ngModel)]="seleccionado.nombre" required></ion-input>
+     </ion-item>
+     <ion-item>
+       <ion-label position="floating">celular</ion-label>
+       <ion-input type = "text" name="celular"[(ngModel)]="seleccionado.celular" required></ion-input>
+     </ion-item>
+   </ion-list>
+   <div padding>
+     <ion-button color="primary" expand="block" type="submit" [disabled]="!editarForm.form.valid">Editar trabajador</ion-button>
+     <ion-button color="secondary" expand="block" type="button" (click)="regresar()">Cancelar</ion-button>
+
+   </div>
+  </form>
+
+ </ion-content>
